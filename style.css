@@ -1,0 +1,134 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background: linear-gradient(#b2f0e6, #7ccf9e);
+}
+
+#game-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#clover {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 50%;
+  left: 100px;
+  transform: translateY(-50%);
+}
+
+#score {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 30px;
+  color: #fff;
+  background-color: rgba(0,0,0,0.4);
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.pipe {
+  position: absolute;
+  width: 80px;
+  background: url('pipe.png') repeat-y;
+  background-size: cover;
+}
+
+.pipe-top {
+  top: 0;
+  height: var(--gap-top);
+}
+
+.pipe-bottom {
+  bottom: 0;
+  height: var(--gap-bottom);
+}
+
+.popup {
+  position: absolute;
+  width: 300px;
+  padding: 20px;
+  background-color: #e0f7f4;
+  border: 2px solid #3cb371;
+  border-radius: 10px;
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.popup p {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.popup .buttons button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  background-color: #3cb371;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.firework {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: radial-gradient(circle, yellow, red);
+  border-radius: 50%;
+  animation: explode 1s ease-out;
+  z-index: 2000;
+}
+
+@keyframes explode {
+  0% {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(5);
+    opacity: 0;
+  }
+}
+
+.restart-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 15px 30px;
+  font-size: 20px;
+  cursor: pointer;
+  background: #3cb371;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  z-index: 1000;
+}
+
+.symbol-float {
+  position: fixed;
+  font-size: 20px;
+  z-index: 2000;
+  pointer-events: none;
+  animation: floatUp 3s ease-out forwards;
+}
+
+@keyframes floatUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-200px);
+  }
+}
